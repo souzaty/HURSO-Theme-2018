@@ -32,7 +32,7 @@ require_once('wp_bootstrap_pagination.php');
 function themename_custom_logo_setup() {
 $defaults = array(
     'height'      => 80,
-    'width'       => 200,
+    'width'       => 213,
     'flex-height' => true,
     'flex-width'  => true,
     'header-text' => array( 'site-title', 'site-description' ),
