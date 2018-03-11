@@ -9,8 +9,8 @@
  add_action('init', 'indicadores_ibgh');
  function indicadores_ibgh() {
  	$labels = array(
- 		'name' => __('Indicadores IBGH', 'Tipo de post para incluir os indicadores.'),
- 		'singular_name' => __('Indicadores IBGH', 'post type singular name'),
+ 		'name' => __('Indicadores', 'Tipo de post para incluir os indicadores.'),
+ 		'singular_name' => __('Indicadores', 'post type singular name'),
  		'all_items' => __('Indicadores'),
  		'add_new' => _x('Novo indicador', 'Novo indicador'),
  		'add_new_item' => __('Add novo indicador'),
@@ -145,8 +145,8 @@
  add_action('init', 'servicos_heelj');
  function servicos_heelj() {
  	$labels = array(
- 		'name' => __('Serviços HEELJ', 'Tipo de post para incluir os serviços do HEELJ.'),
- 		'singular_name' => __('serviços HEELJ', 'post type singular name'),
+ 		'name' => __('Serviços', 'Tipo de post para incluir os serviços do HEELJ.'),
+ 		'singular_name' => __('serviços', 'post type singular name'),
  		'all_items' => __('Todos os serviços'),
  		'add_new' => _x('Novo serviço', 'Novo serviço'),
  		'add_new_item' => __('Add novo serviço'),
@@ -313,7 +313,7 @@
   	update_post_meta($post->ID, "corpo_crm", $_POST["corpo_crm"]);
   }
   // End CPT Corpo Clínico
-  
+
 // Start CPT Trabalhe Conosco
 add_action('init', 'trabalhe_register');
 function trabalhe_register()

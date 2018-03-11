@@ -1,8 +1,8 @@
 <?php
 /** Theme Shortcodes
  * @package WordPress
- * @subpackage HEELJ
- * @since HEELJ 1.0 Beta
+ * @subpackage HURSO
+ * @since HURSO 1.0 Beta
  */
 
  // Start Shortcode Notícias Home
