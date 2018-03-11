@@ -1,11 +1,11 @@
 <?php
 /**
- * @package WordPress
- * @subpackage HEELJ
- * @since HEELJ 1.0
+* @package WordPress
+* @subpackage HURSO
+* @since HURSO 1.0
 */
-
-get_header(); ?>
+?>
+<?php get_header(); ?>
 
 
 

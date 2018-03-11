@@ -2,7 +2,7 @@
 /** Theme Shortcodes
  * @package WordPress
  * @subpackage HURSO
- * @since HURSO 1.0 Beta
+ * @since HURSO 1.0
  */
 
  // Start Shortcode Notícias Home
