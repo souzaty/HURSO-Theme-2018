@@ -5,21 +5,21 @@
  * @since HURSO 1.0 Beta
  */
 
- // Start CPT Corpo Clínico
- add_action('init', 'corpo_clinico_heelj_register');
- function corpo_clinico_heelj_register() {
+ // Start  CPT Indicadores
+ add_action('init', 'indicadores_ibgh');
+ function indicadores_ibgh() {
  	$labels = array(
- 		'name' => __('Corpo Cl&iacute;nico', 'Tipo de post para incluir os profissionais do hospital.'),
- 		'singular_name' => __('Corpo Cl&iacute;nico', 'post type singular name'),
- 		'all_items' => __('Todos profissionais'),
- 		'add_new' => _x('Novo profissional', 'Novo profissional'),
- 		'add_new_item' => __('Add novo item'),
- 		'edit_item' => __('Editar profissional'),
- 		'new_item' => __('Novo profissional Item'),
- 		'view_item' => __('Ver item do profissional'),
- 		'search_items' => __('Procurar profissional'),
- 		'not_found' => __('Nenhum profissional encontrado'),
- 		'not_found_in_trash' => __('Nenhum profissional encontrado na lixeira'),
+ 		'name' => __('Indicadores IBGH', 'Tipo de post para incluir os indicadores.'),
+ 		'singular_name' => __('Indicadores IBGH', 'post type singular name'),
+ 		'all_items' => __('Indicadores'),
+ 		'add_new' => _x('Novo indicador', 'Novo indicador'),
+ 		'add_new_item' => __('Add novo indicador'),
+ 		'edit_item' => __('Editar indicador'),
+ 		'new_item' => __('Novo indicador Item'),
+ 		'view_item' => __('Ver item do indicador'),
+ 		'search_items' => __('Procurar indicador'),
+ 		'not_found' => __('Nenhum indicador encontrado'),
+ 		'not_found_in_trash' => __('Nenhum indicador encontrado na lixeira'),
  		'parent_item_colon' => ''
  	);
  	$args   = array(
@@ -28,54 +28,118 @@
  		'publicly_queryable' => true,
  		'show_ui' => true,
  		'query_var' => true,
- 		'menu_icon' => 'dashicons-admin-users',
+ 		'menu_icon' => 'dashicons-chart-pie',
+ 		'rewrite' => array(
+ 						'slug' => 'indicadores',
+ 						'with_front' => false
+ 		),
  		'capability_type' => 'post',
  		'hierarchical' => false,
  		'menu_position' => 6,
  		'taxonomies' => array(
- 			'post_tag'
- 			),
+ 						'post_tag'
+ 		),
  		'supports' => array(
- 			'title',
- 			'thumbnail',
- 			'tags'
- 			)
- 	);
- register_post_type('corpo_clinico_heelj', $args);
+ 						'title',
+ 						'revisions'
+ 		)
+ );
+ 	register_post_type('indicadores-ibgh', $args);
  	flush_rewrite_rules();
  }
- register_taxonomy("Especialidades", array(
- 	"corpo_clinico_heelj"
- 	), array(
- 	"hierarchical" => true,
- 	"label" => "Especialidades",
- 	"singular_label" => "edital",
- 	"rewrite" => array(
- 		'slug' => 'edital'
- 		),
- 	"public" => true,
- 	"show_ui" => true,
- 	"_builtin" => true
- 	));
- add_action("admin_init", "campos_personalizados_corpo_clinico_heelj");
- function campos_personalizados_corpo_clinico_heelj() {
- 	add_meta_box("corpo_crm", "Informe o CRM", "corpo_crm", "corpo_clinico_heelj", "normal", "low");
+ add_action("admin_init", "campos_personalizados_indicadores_ibgh");
+ function campos_personalizados_indicadores_ibgh() {
+ 	add_meta_box("indicador_heelj", "Indicadores HEELJ", "indicador_heelj", "indicadores-ibgh", "normal", "low");
  }
- function corpo_crm() {
+ function indicador_heelj() {
  	global $post;
- 	$custom    = get_post_meta($post->ID);
- 	$corpo_crm = $custom["corpo_crm"][0];
+ 	$custom                  = get_post_meta($post->ID);
+ 	$label_indicador_heelj_1 = $custom["label_indicador_heelj_1"][0];
+ 	$value_indicador_heelj_1 = $custom["value_indicador_heelj_1"][0];
+ 	$label_indicador_heelj_2 = $custom["label_indicador_heelj_2"][0];
+ 	$value_indicador_heelj_2 = $custom["value_indicador_heelj_2"][0];
+ 	$label_indicador_heelj_3 = $custom["label_indicador_heelj_3"][0];
+ 	$value_indicador_heelj_3 = $custom["value_indicador_heelj_3"][0];
+ 	$label_indicador_heelj_4 = $custom["label_indicador_heelj_4"][0];
+ 	$value_indicador_heelj_4 = $custom["value_indicador_heelj_4"][0];
+ 	$label_indicador_heelj_5 = $custom["label_indicador_heelj_5"][0];
+ 	$value_indicador_heelj_5 = $custom["value_indicador_heelj_5"][0];
+ 	$label_indicador_heelj_6 = $custom["label_indicador_heelj_6"][0];
+ 	$value_indicador_heelj_6 = $custom["value_indicador_heelj_6"][0];
+ 	$data_acumulado_heelj    = $custom["data_acumulado_heelj"][0];
+ 	$frase_heelj             = $custom["frase_heelj"][0];
  ?>
- 	<input type="text" name="corpo_crm" value='<?php echo $corpo_crm;
- 	?>' /></p>
- <?php
+
+ 	<label>Informe o label HEELJ 1</label>
+ 	<input type="text" name="label_indicador_heelj_1" value="<?php echo $label_indicador_heelj_1;
+ ?>" />
+ 	<label>Informe o conteúdo HEELJ 1</label>
+ 	<input type="text" name="value_indicador_heelj_1" value="<?php echo $value_indicador_heelj_1;
+ ?>" />
+ 	<br />
+ 	<label>Informe o label HEELJ 2</label>
+ 	<input type="text" name="label_indicador_heelj_2" value="<?php echo $label_indicador_heelj_2;
+ ?>" />
+ 	<label>Informe o conteúdo HEELJ 2</label>
+ 	<input type="text" name="value_indicador_heelj_2" value="<?php echo $value_indicador_heelj_2;
+ ?>" />
+ 	<br />
+ 	<label>Informe o label HEELJ 3</label>
+ 	<input type="text" name="label_indicador_heelj_3" value="<?php echo $label_indicador_heelj_3;
+ ?>" />
+ 	<label>Informe o conteúdo HEELJ 3</label>
+ 	<input type="text" name="value_indicador_heelj_3" value="<?php echo $value_indicador_heelj_3;
+ ?>" />
+ 	<br />
+ 	<label>Informe o label HEELJ 4</label>
+ 	<input type="text" name="label_indicador_heelj_4" value="<?php echo $label_indicador_heelj_4;
+ ?>" />
+ 	<label>Informe o conteúdo HEELJ 4</label>
+ 	<input type="text" name="value_indicador_heelj_4" value="<?php echo $value_indicador_heelj_4;
+ ?>" />
+ 	<br />
+ 	<label>Informe o label HEELJ 5</label>
+ 	<input type="text" name="label_indicador_heelj_5" value="<?php echo $label_indicador_heelj_5;
+ ?>" />
+ 	<label>Informe o conteúdo HEELJ 5</label>
+ 	<input type="text" name="value_indicador_heelj_5" value="<?php echo $value_indicador_heelj_5;
+ ?>" />
+ 	<br />
+ 	<label>Informe o label HEELJ 6</label>
+ 	<input type="text" name="label_indicador_heelj_6" value="<?php echo $label_indicador_heelj_6;
+ ?>" />
+ 	<label>Informe o conteúdo HEELJ 6</label>
+ 	<input type="text" name="value_indicador_heelj_6" value="<?php echo $value_indicador_heelj_6;
+ ?>" />
+ 	<br /><br />
+ 	<label>Informe o período acumulado</label>
+ 	<input type="text" name="data_acumulado_heelj" value="<?php echo $data_acumulado_heelj;
+ ?>" />
+ 	<br />
+ 	<label>Informe o frase principal</label>
+ 	<input type="text" name="frase_heelj" value="<?php echo $frase_heelj;
+ ?>" />
+ 					<?php
  }
- add_action('save_post_corpo_clinico_heelj', 'save_details_post_corpo_clinico_heelj');
- function save_details_post_corpo_clinico_heelj() {
+ add_action('save_post_indicadores-ibgh', 'save_details_post_indicadores_ibgh');
+ function save_details_post_indicadores_ibgh() {
  	global $post;
- 	update_post_meta($post->ID, "corpo_crm", $_POST["corpo_crm"]);
+ 	update_post_meta($post->ID, "label_indicador_heelj_1", $_POST["label_indicador_heelj_1"]);
+ 	update_post_meta($post->ID, "value_indicador_heelj_1", $_POST["value_indicador_heelj_1"]);
+ 	update_post_meta($post->ID, "label_indicador_heelj_2", $_POST["label_indicador_heelj_2"]);
+ 	update_post_meta($post->ID, "value_indicador_heelj_2", $_POST["value_indicador_heelj_2"]);
+ 	update_post_meta($post->ID, "label_indicador_heelj_3", $_POST["label_indicador_heelj_3"]);
+ 	update_post_meta($post->ID, "value_indicador_heelj_3", $_POST["value_indicador_heelj_3"]);
+ 	update_post_meta($post->ID, "label_indicador_heelj_4", $_POST["label_indicador_heelj_4"]);
+ 	update_post_meta($post->ID, "value_indicador_heelj_4", $_POST["value_indicador_heelj_4"]);
+ 	update_post_meta($post->ID, "label_indicador_heelj_5", $_POST["label_indicador_heelj_5"]);
+ 	update_post_meta($post->ID, "value_indicador_heelj_5", $_POST["value_indicador_heelj_5"]);
+ 	update_post_meta($post->ID, "label_indicador_heelj_6", $_POST["label_indicador_heelj_6"]);
+ 	update_post_meta($post->ID, "value_indicador_heelj_6", $_POST["value_indicador_heelj_6"]);
+ 	update_post_meta($post->ID, "data_acumulado_heelj", $_POST["data_acumulado_heelj"]);
+ 	update_post_meta($post->ID, "frase_heelj", $_POST["frase_heelj"]);
  }
- // End CPT Corpo Clínico
+ // End CPT Indicadores
 
  // Start CPT Serviços
  add_action('init', 'servicos_heelj');
@@ -178,6 +242,78 @@
  }
  // End CPT Serviços
 
+ // Start CPT Corpo Clínico
+  add_action('init', 'corpo_clinico_heelj_register');
+  function corpo_clinico_heelj_register() {
+  	$labels = array(
+  		'name' => __('Corpo Cl&iacute;nico', 'Tipo de post para incluir os profissionais do hospital.'),
+  		'singular_name' => __('Corpo Cl&iacute;nico', 'post type singular name'),
+  		'all_items' => __('Todos profissionais'),
+  		'add_new' => _x('Novo profissional', 'Novo profissional'),
+  		'add_new_item' => __('Add novo item'),
+  		'edit_item' => __('Editar profissional'),
+  		'new_item' => __('Novo profissional Item'),
+  		'view_item' => __('Ver item do profissional'),
+  		'search_items' => __('Procurar profissional'),
+  		'not_found' => __('Nenhum profissional encontrado'),
+  		'not_found_in_trash' => __('Nenhum profissional encontrado na lixeira'),
+  		'parent_item_colon' => ''
+  	);
+  	$args   = array(
+  		'labels' => $labels,
+  		'public' => true,
+  		'publicly_queryable' => true,
+  		'show_ui' => true,
+  		'query_var' => true,
+  		'menu_icon' => 'dashicons-admin-users',
+  		'capability_type' => 'post',
+  		'hierarchical' => false,
+  		'menu_position' => 6,
+  		'taxonomies' => array(
+  			'post_tag'
+  			),
+  		'supports' => array(
+  			'title',
+  			'thumbnail',
+  			'tags'
+  			)
+  	);
+  register_post_type('corpo_clinico_heelj', $args);
+  	flush_rewrite_rules();
+  }
+  register_taxonomy("Especialidades", array(
+  	"corpo_clinico_heelj"
+  	), array(
+  	"hierarchical" => true,
+  	"label" => "Especialidades",
+  	"singular_label" => "edital",
+  	"rewrite" => array(
+  		'slug' => 'edital'
+  		),
+  	"public" => true,
+  	"show_ui" => true,
+  	"_builtin" => true
+  	));
+  add_action("admin_init", "campos_personalizados_corpo_clinico_heelj");
+  function campos_personalizados_corpo_clinico_heelj() {
+  	add_meta_box("corpo_crm", "Informe o CRM", "corpo_crm", "corpo_clinico_heelj", "normal", "low");
+  }
+  function corpo_crm() {
+  	global $post;
+  	$custom    = get_post_meta($post->ID);
+  	$corpo_crm = $custom["corpo_crm"][0];
+  ?>
+  	<input type="text" name="corpo_crm" value='<?php echo $corpo_crm;
+  	?>' /></p>
+  <?php
+  }
+  add_action('save_post_corpo_clinico_heelj', 'save_details_post_corpo_clinico_heelj');
+  function save_details_post_corpo_clinico_heelj() {
+  	global $post;
+  	update_post_meta($post->ID, "corpo_crm", $_POST["corpo_crm"]);
+  }
+  // End CPT Corpo Clínico
+  
 // Start CPT Trabalhe Conosco
 add_action('init', 'trabalhe_register');
 function trabalhe_register()
