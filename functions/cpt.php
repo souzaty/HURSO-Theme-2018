@@ -1,15 +1,15 @@
 <?php
 /** Theme Custom Post Types
  * @package WordPress
- * @subpackage HEELJ
- * @since HEELJ 1.0 Beta
+ * @subpackage HURSO
+ * @since HURSO 1.0 Beta
  */
 
  // Start CPT Corpo Clínico
  add_action('init', 'corpo_clinico_heelj_register');
  function corpo_clinico_heelj_register() {
  	$labels = array(
- 		'name' => __('Corpo Cl&iacute;nico HEELJ', 'Tipo de post para incluir os profissionais do HEELJ.'),
+ 		'name' => __('Corpo Cl&iacute;nico', 'Tipo de post para incluir os profissionais do hospital.'),
  		'singular_name' => __('Corpo Cl&iacute;nico', 'post type singular name'),
  		'all_items' => __('Todos profissionais'),
  		'add_new' => _x('Novo profissional', 'Novo profissional'),
