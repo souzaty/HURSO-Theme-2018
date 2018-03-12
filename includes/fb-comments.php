@@ -1,3 +1,11 @@
+<?php
+/**
+* @package WordPress
+* @subpackage HURSO
+* @since HURSO 1.0
+*/
+
+?>
 <section id="Comments">
   <div class="container">
     <div class="row">
@@ -5,4 +13,4 @@
               <?php echo do_shortcode('[wpdevart_facebook_comment curent_url="<?php the_permalink(); ?>" order_type="social" title_text="" title_text_color="#000000" title_text_font_size="0" title_text_font_famely="monospace" title_text_position="left" width="100%" bg_color="#d4d4d4" animation_effect="random" count_of_comments="3" ]'); ?>
     </div>
   </div>
-  
+</section>

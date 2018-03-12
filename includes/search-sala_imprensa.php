@@ -1,7 +1,15 @@
+<?php
+/**
+* @package WordPress
+* @subpackage HURSO
+* @since HURSO 1.0
+*/
+?>
+
 <form class="busca-transparencia" role="search" id="busca-transparencia" method="get" action="<?php echo get_site_url(); ?>/transparencia-resultado/">
 	<div class="input-group">
 		<div class="input-group-btn">
-			<?php 
+			<?php
 				$busca_unidade_id  = get_categories('post_type=post&parent=0&hide_empty=1&hierarchical=1&depth=1&order=ASC');
 				$busca_unidade_id = wp_list_pluck($busca_unidade_id,'slug');
 				$busca_unidade_id =  implode(",", $busca_unidade_id);

@@ -1,10 +1,10 @@
 <?php
-	/**
-	 * @package WordPress
-	 * @subpackage HEELJ
-	 * @since HEELJ 1.0 Beta
-	*/
-	?>
+/**
+* @package WordPress
+* @subpackage HURSO
+* @since HURSO 1.0
+*/
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
