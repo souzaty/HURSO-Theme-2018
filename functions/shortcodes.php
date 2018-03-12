@@ -1,8 +1,8 @@
 <?php
 /** Theme Shortcodes
  * @package WordPress
- * @subpackage HEELJ
- * @since HEELJ 1.0 Beta
+ * @subpackage HURSO
+ * @since HURSO 1.0 Beta
  */
 
  // Start Shortcode Notícias Home
@@ -13,7 +13,7 @@ function noticias_home_heelj_short($atts) { ob_start(); ?>
 			<?php
 				global $post;
 				$wp_query = new WP_Query();
-				$wp_query->query('post_type=post&cat=heelj&posts_per_page=3&orderby=date&order=DESC');
+				$wp_query->query('post_type=post&cat=hurso&posts_per_page=3&orderby=date&order=DESC');
 				$count = 0;
 			?>
 			<?php
@@ -24,7 +24,7 @@ function noticias_home_heelj_short($atts) { ob_start(); ?>
   			<div class="col-md-4">
 				<a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail('noticias-home-heelj'); ?></a>
 				<div class="borda-meio">
-					<p class="category-news center"><span>HEELJ em A&ccedil;&atilde;o</span></p>
+					<p class="category-news center"><span>HURSO em A&ccedil;&atilde;o</span></p>
 				</div>
 				<h2 class="title-news"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<p class="resume-news"><?php the_excerpt(); ?></p>
