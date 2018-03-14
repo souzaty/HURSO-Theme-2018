@@ -1,9 +1,11 @@
 <?php
 /** Register Theme Menus
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 
 register_nav_menus(array(
 				'menu_principal_heelj' => __('Menu principal'),

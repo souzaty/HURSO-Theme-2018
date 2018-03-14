@@ -1,9 +1,11 @@
 <?php
 /** Theme Custom Post Types
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 
  // Start  CPT Indicadores
  add_action('init', 'indicadores_ibgh');
