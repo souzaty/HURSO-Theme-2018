@@ -12,6 +12,10 @@ color:#fff;
 background:#0072a4
 }
 
+aside#text-2 {
+    margin-top: -42px;
+}
+
 footer ul {
 padding-left:0;
 margin-top:30px
