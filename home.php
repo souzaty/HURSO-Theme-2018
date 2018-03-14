@@ -1,10 +1,11 @@
 <?php
-/* Template Name: Página Padrão */
-/**
+/** Template Name: Página Padrão
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 ?>
 <div id="pagina-interna-heelj">
 		<?php get_header(); ?>

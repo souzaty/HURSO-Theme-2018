@@ -1,9 +1,11 @@
 <?php
 /**
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 ?>
 
 <div id="comments" class="comments-area">

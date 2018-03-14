@@ -1,6 +1,6 @@
 <?php
-/* Template Name: Erro 404	*/
-/**
+/** Template Name: Erro 404
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0

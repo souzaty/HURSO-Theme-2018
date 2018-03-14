@@ -1,10 +1,11 @@
 <?php
-/* Template Name: Página de Contato */
-/**
+/** Template Name: Página de Contato
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 ?>
 <div id="pagina-interna-heelj">
 	<?php get_header(); ?>

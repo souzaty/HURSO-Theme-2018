@@ -1,10 +1,11 @@
 <?php
-/* Template Name: Category PHP */
-/**
+/** Template Name: Categorias
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 ?>
 <?php
 	global $post;

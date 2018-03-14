@@ -1,10 +1,11 @@
 <?php
-/* Template Name: SEARCH */
-/**
+/** Template Name: SEARCH
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 ?>
 <?php
    global $post;

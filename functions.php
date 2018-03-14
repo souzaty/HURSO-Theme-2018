@@ -1,9 +1,11 @@
 <?php
-/**
+/** Theme Functions
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 
 // Funtion load scripts (Carrega scripts do bootstrap e font Awesome)
 function load_scripts() {

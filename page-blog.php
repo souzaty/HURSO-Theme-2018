@@ -1,10 +1,11 @@
 <?php
-/* Template Name: Página de Notícias */
-/**
+/** Template Name: Página de Notícias
+*
 * @package WordPress
 * @subpackage HURSO
 * @since HURSO 1.0
 */
+
 ?>
 
 <div id="pagina-interna-heelj">
