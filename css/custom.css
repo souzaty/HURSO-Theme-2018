@@ -1,3 +1,11 @@
+/** Custom theme styels
+*
+* @package WordPress
+* @subpackage HURSO
+* @since HURSO 1.0
+*/
+
+
 /* Global Theme Styles */
 @import "global.css";
 /* Navbar Theme Styles */
