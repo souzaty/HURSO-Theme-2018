@@ -1203,7 +1203,9 @@ margin-left:0;
 padding-left:0
 }
 
-
+ul.lista-transparencia li {
+    padding: 10px 0;
+}
 
 .intro-service h1 {
 color:#21b9eb!important
